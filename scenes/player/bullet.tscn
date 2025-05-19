@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bs3iufpbn54v5"]
+[gd_scene load_steps=4 format=3 uid="uid://bs3iufpbn54v5"]
 
 [ext_resource type="Texture2D" uid="uid://bltdd73svcpmk" path="res://assets/icon.svg" id="1_v7oki"]
+[ext_resource type="Script" uid="uid://cw56fkxi3om33" path="res://scenes/player/bullet.gd" id="1_v8qja"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v8qja"]
 
 [node name="bullet" type="RigidBody2D"]
 gravity_scale = 0.0
+script = ExtResource("1_v8qja")
 
 [node name="bulletPicture" type="Sprite2D" parent="."]
 scale = Vector2(0.15, 0.15)
