@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://jvktnlahd8lb"]
+
+[ext_resource type="Script" uid="uid://dsmepqnbh0k0b" path="res://player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://cbaemdipsk7mp" path="res://assets/buttonPressed.png" id="2_i3pqv"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
+radius = 27.0185
+
+[node name="player" type="RigidBody2D" node_paths=PackedStringArray("arm", "hand")]
+gravity_scale = 0.0
+linear_damp_mode = 1
+script = ExtResource("1_onrkg")
+deceleration = 0.05
+arm = NodePath("armPivot")
+hand = NodePath("armPivot/hand")
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hqtel")
+
+[node name="playerSprite" type="Sprite2D" parent="."]
+texture = ExtResource("2_i3pqv")
+
+[node name="armPivot" type="Node2D" parent="."]
+
+[node name="hand" type="Node2D" parent="armPivot"]
+position = Vector2(50, 0)
+
+[node name="Camera2D" type="Camera2D" parent="."]

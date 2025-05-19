@@ -8,6 +8,8 @@
 [resource]
 CheckBox/icons/checked = ExtResource("1_cjfk0")
 CheckBox/icons/unchecked = ExtResource("2_vj6dk")
+CheckBox/styles/focus = null
+CheckBox/styles/hover = null
 PanelContainer/styles/panel = SubResource("StyleBoxEmpty_cjfk0")
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 0)
