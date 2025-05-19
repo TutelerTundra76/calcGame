@@ -1,14 +1,20 @@
-[gd_resource type="Theme" load_steps=4 format=3 uid="uid://de5gpox1bsv1r"]
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://de5gpox1bsv1r"]
 
 [ext_resource type="Texture2D" uid="uid://cbaemdipsk7mp" path="res://assets/buttonPressed.png" id="1_cjfk0"]
 [ext_resource type="Texture2D" uid="uid://dl27ai0wvtosx" path="res://assets/button.png" id="2_vj6dk"]
+[ext_resource type="StyleBox" uid="uid://qf24tcvfnlo1" path="res://tres/questionBackground.tres" id="3_0jpk8"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cjfk0"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0jpk8"]
 
 [resource]
 CheckBox/icons/checked = ExtResource("1_cjfk0")
 CheckBox/icons/unchecked = ExtResource("2_vj6dk")
-PanelContainer/styles/panel = SubResource("StyleBoxEmpty_cjfk0")
+CheckBox/styles/focus = ExtResource("3_0jpk8")
+CheckBox/styles/hover = ExtResource("3_0jpk8")
+CheckBox/styles/hover_pressed = ExtResource("3_0jpk8")
+CheckBox/styles/normal = ExtResource("3_0jpk8")
+CheckBox/styles/pressed = ExtResource("3_0jpk8")
+PanelContainer/styles/panel = SubResource("StyleBoxEmpty_0jpk8")
 RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 0)
 RichTextLabel/colors/selection_color = Color(0.101961, 0.101961, 1, 0)

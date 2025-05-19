@@ -1,9 +1,17 @@
 extends Control
 
+
+var frame := 0.0 ## used for the background visuals
+var minCorn = 4.0 ## also for visuals
+var maxCorn = 20.0 ## also also for visuals
+var visualConstant = 1 ## I dont know why this exists but I need it
+
+
 var ques:question## active question
 # the folder where the questions are 
 @export var questionfolder:="res://questions/" ## the path to the questions
 @onready var style = preload("res://tres/theme.tres")  ## the style to apply to everything
+@onready var qStyle = preload("res://tres/questionBackground.tres") ## stylebox specifically for the background
 
 var boxes :Array[CheckBox] ## the check boxes
 var state:=-1## the curent button checked
@@ -13,7 +21,7 @@ func _ready() -> void:
 	for file in DirAccess.open(questionfolder).get_files():
 		files.append(load(questionfolder+file))
 	ques=files[randi_range(0,len(files)-1)]
-	%RichTextLabel.text=ques.questionText
+	%questionLabel.text=ques.questionText
 	
 	#scramble the answers
 	var avalibleIndexes:Array[int]
@@ -28,8 +36,10 @@ func _ready() -> void:
 		check.theme=style
 		check.text=ques.answers[avalibleIndexes[ind]]
 		avalibleIndexes.pop_at(ind)
-		%VBoxContainer.add_child(check)
+		%questionVContainer.add_child(check)
 
+func _process(delta):
+	question_background_visuals(delta)
 
 
 #make sure only one button is pressed
@@ -50,3 +60,17 @@ func _on_next_button_pressed() -> void:
 	if state!=-1:
 		if ques.answers[0]==boxes[state].text:
 			print("correct")
+
+func question_background_visuals(delta: float) -> void:
+	frame += delta
+	var gumbus = 0.5 + (sin(frame * visualConstant) / 2)
+	var smunk = 0.5 + (cos(frame * visualConstant * 3) / 2)
+	qStyle.corner_radius_top_left = lerp(minCorn, maxCorn, gumbus)
+	qStyle.corner_radius_top_right = lerp(maxCorn, minCorn, gumbus)
+	qStyle.corner_radius_bottom_left = lerp(maxCorn, minCorn, gumbus)
+	qStyle.corner_radius_bottom_right = lerp(minCorn, maxCorn, gumbus)
+	qStyle.expand_margin_left = lerp(10, 20, smunk)
+	qStyle.expand_margin_right = lerp(10, 20, smunk)
+	qStyle.skew.x = lerp(0.10, 0.15, gumbus)
+	
+	add_theme_stylebox_override("the", qStyle)

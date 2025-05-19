@@ -1,0 +1,61 @@
+[gd_scene load_steps=3 format=3 uid="uid://s4r0dtmpiaoh"]
+
+[ext_resource type="Script" uid="uid://bagpcmsw4w0h6" path="res://scripts/quiz.gd" id="1_ssvsy"]
+[ext_resource type="Theme" uid="uid://de5gpox1bsv1r" path="res://tres/theme.tres" id="2_upyk2"]
+
+[node name="QuestionUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ssvsy")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="questionSplitContainer" type="VSplitContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+dragging_enabled = false
+
+[node name="questionContainer" type="PanelContainer" parent="AspectRatioContainer/questionSplitContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("2_upyk2")
+
+[node name="questionLabel" type="RichTextLabel" parent="AspectRatioContainer/questionSplitContainer/questionContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("2_upyk2")
+text = "this is text"
+horizontal_alignment = 1
+vertical_alignment = 1
+drag_and_drop_selection_enabled = false
+
+[node name="VSplitContainer" type="VSplitContainer" parent="AspectRatioContainer/questionSplitContainer"]
+layout_mode = 2
+dragging_enabled = false
+
+[node name="questionVContainer" type="VBoxContainer" parent="AspectRatioContainer/questionSplitContainer/VSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
+
+[node name="nextContainer" type="CenterContainer" parent="AspectRatioContainer/questionSplitContainer/VSplitContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 4
+
+[node name="nextButton" type="Button" parent="AspectRatioContainer/questionSplitContainer/VSplitContainer/nextContainer"]
+layout_mode = 2
+text = "next"
+
+[connection signal="pressed" from="AspectRatioContainer/questionSplitContainer/VSplitContainer/nextContainer/nextButton" to="." method="_on_next_button_pressed"]
