@@ -3,7 +3,7 @@ extends Control
 var ques:question## active question
 # the folder where the questions are 
 @export var questionfolder:="res://questions/" ## the path to the questions
-@onready var style = preload("res://theme.tres")  ## the style to apply to everything
+@onready var style = preload("res://tres/theme.tres")  ## the style to apply to everything
 
 var boxes :Array[CheckBox] ## the check boxes
 var state:=-1## the curent button checked
