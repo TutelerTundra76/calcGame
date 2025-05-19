@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://bwgekg8sa8i14"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_rwqrj"]
+
+[resource]
+script = ExtResource("1_rwqrj")
+type = null
+questionText = "what is the derivitive of x^2"
+answers = Array[String](["2x", "(x^3)/3", "x^2", "e^2"])
+metadata/_custom_type_script = "uid://u6khguqlv8a7"

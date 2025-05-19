@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://s4r0dtmpiaoh"]
+
+[ext_resource type="Script" uid="uid://bagpcmsw4w0h6" path="res://quiz.gd" id="1_62e2m"]
+[ext_resource type="Resource" uid="uid://bwgekg8sa8i14" path="res://questions/question1.tres" id="2_qtu10"]
+[ext_resource type="Theme" uid="uid://de5gpox1bsv1r" path="res://theme.tres" id="3_qtu10"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_62e2m")
+ques = ExtResource("2_qtu10")
+
+[node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VSplitContainer" type="VSplitContainer" parent="AspectRatioContainer"]
+layout_mode = 2
+
+[node name="Container" type="PanelContainer" parent="AspectRatioContainer/VSplitContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("3_qtu10")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="AspectRatioContainer/VSplitContainer/Container"]
+unique_name_in_owner = true
+layout_mode = 2
+theme = ExtResource("3_qtu10")
+text = "this is text"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VSplitContainer" type="VSplitContainer" parent="AspectRatioContainer/VSplitContainer"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/VSplitContainer/VSplitContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 8
+alignment = 2
+
+[node name="Container2" type="VBoxContainer" parent="AspectRatioContainer/VSplitContainer/VSplitContainer"]
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+size_flags_vertical = 0
