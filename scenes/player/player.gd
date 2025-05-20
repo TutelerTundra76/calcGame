@@ -3,7 +3,7 @@ extends RigidBody2D
 @export var deceleration:=.25
 @export var arm:Node2D
 @export var hand:Node2D
-var bullet :=preload("res://bullet.tscn")
+var bullet :=preload("res://scenes/player/bullet.tscn")
 func _physics_process(delta: float) -> void:
 	var dir:=Input.get_vector("left","right","forward","back")
 	apply_central_force(dir* speed)
