@@ -1,3 +1,4 @@
+class_name Player
 extends RigidBody2D
 @export var speed:=100
 @export var deceleration:=.25
@@ -11,9 +12,18 @@ extends RigidBody2D
 @onready var reload = $armPivot/hand/reload
 
 var direction:=1
+@export var arrows:=20
 var bullet :=preload("res://scenes/player/bullet.tscn")
 var canShoot := true ## stops you from shooting a zillion arrows at once
 
+func _ready() -> void:
+	Global.player=self
+	Global.connectRewards()
+	
+func add_ammo():
+	arrows+=5
+	print(arrows)
+	
 func _physics_process(delta: float) -> void:
 	var dir:=Input.get_vector("left","right","forward","back").normalized()
 	checkAnimations(dir)

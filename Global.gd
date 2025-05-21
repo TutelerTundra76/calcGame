@@ -1,0 +1,25 @@
+extends Node
+
+var points:=0
+var correct:=0
+var pause:=false : set= setPause
+var quizNode:quiz
+var player:Player
+func _ready():
+	process_mode = Node.PROCESS_MODE_ALWAYS
+
+func connectRewards():
+	if quizNode and player:
+		quizNode.correct.connect(player.add_ammo)
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("question"):
+		if get_tree().paused:
+			pause=false
+		else:
+			pause=true
+		print(quizNode)
+		quizNode.visible=true
+		quizNode.get_question()
+func setPause(paused:bool):
+	
+	get_tree().paused=paused
