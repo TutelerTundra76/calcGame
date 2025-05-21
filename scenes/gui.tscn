@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cjloc4t86fxuo"]
+
+[ext_resource type="PackedScene" uid="uid://s4r0dtmpiaoh" path="res://scenes/questionUI.tscn" id="1_efmwq"]
+
+[node name="GUI" type="CanvasLayer"]
+follow_viewport_enabled = true
+
+[node name="QuestionUI" parent="." instance=ExtResource("1_efmwq")]

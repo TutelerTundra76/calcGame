@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://s4r0dtmpiaoh"]
+[gd_scene load_steps=4 format=3 uid="uid://s4r0dtmpiaoh"]
 
 [ext_resource type="Script" uid="uid://bagpcmsw4w0h6" path="res://scripts/quiz.gd" id="1_ssvsy"]
 [ext_resource type="Theme" uid="uid://de5gpox1bsv1r" path="res://tres/theme.tres" id="2_upyk2"]
+[ext_resource type="StyleBox" uid="uid://qf24tcvfnlo1" path="res://tres/questionBackground.tres" id="3_upyk2"]
 
 [node name="QuestionUI" type="Panel"]
 process_mode = 3
