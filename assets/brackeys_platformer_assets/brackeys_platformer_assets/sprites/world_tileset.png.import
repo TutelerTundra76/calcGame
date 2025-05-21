@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b751fryqkxihr"
-path="res://.godot/imported/TilesetGraveyard.png-657a94a962a8d27906dd523e65a62803.ctex"
+uid="uid://daywdsyjwjjnt"
+path="res://.godot/imported/world_tileset.png-d9282290ad43b7b4a17bc942cd599aab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://TilesetGraveyard.png"
-dest_files=["res://.godot/imported/TilesetGraveyard.png-657a94a962a8d27906dd523e65a62803.ctex"]
+source_file="res://assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/world_tileset.png"
+dest_files=["res://.godot/imported/world_tileset.png-d9282290ad43b7b4a17bc942cd599aab.ctex"]
 
 [params]
 

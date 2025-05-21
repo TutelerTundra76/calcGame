@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://bwvxirx621i0y"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_01caj"]
+
+[resource]
+script = ExtResource("1_01caj")
+type = null
+questionText = "what is the derivitive of arcsin"
+answers = Array[String](["1/(sqrt(1+x^2))"])
+metadata/_custom_type_script = "uid://u6khguqlv8a7"
