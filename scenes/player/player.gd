@@ -1,3 +1,4 @@
+class_name Player
 extends RigidBody2D
 @export var speed:=100
 @export var deceleration:=.25
@@ -7,7 +8,16 @@ extends RigidBody2D
 @export var hand:Node2D
 @export var sprite:AnimatedSprite2D
 var direction:=1
+@export var arrows:=20
 var bullet :=preload("res://scenes/player/bullet.tscn")
+func _ready() -> void:
+	Global.player=self
+	Global.connectRewards()
+	
+func add_ammo():
+	arrows+=5
+	print(arrows)
+	
 func _physics_process(delta: float) -> void:
 	var dir:=Input.get_vector("left","right","forward","back").normalized()
 	checkAnimations(dir)
@@ -18,13 +28,14 @@ func _physics_process(delta: float) -> void:
 	if dir==Vector2.ZERO:
 		linear_velocity=lerp(linear_velocity,Vector2.ZERO,deceleration)
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("shoot"):
+	if event.is_action_pressed("shoot") and arrows>0:
+		arrows-=1
 		%bow.play("shoot")
 		var bull:RigidBody2D= bullet.instantiate()
-		bull.global_transform= hand.global_transform
 		
 		
 		await %bow.animation_finished
+		bull.global_transform= hand.global_transform
 		get_tree().root.add_child(bull)
 		bull.fire()
 		

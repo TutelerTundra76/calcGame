@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://bagpcmsw4w0h6" path="res://scripts/quiz.gd" id="1_ssvsy"]
 [ext_resource type="Theme" uid="uid://de5gpox1bsv1r" path="res://tres/theme.tres" id="2_upyk2"]
 
-[node name="QuestionUI" type="Control"]
-layout_mode = 3
+[node name="QuestionUI" type="Panel"]
+process_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -54,8 +54,19 @@ custom_minimum_size = Vector2(0, 300)
 layout_mode = 2
 size_flags_vertical = 4
 
-[node name="nextButton" type="Button" parent="AspectRatioContainer/questionSplitContainer/VSplitContainer/nextContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="AspectRatioContainer/questionSplitContainer/VSplitContainer/nextContainer"]
 layout_mode = 2
-text = "next"
 
-[connection signal="pressed" from="AspectRatioContainer/questionSplitContainer/VSplitContainer/nextContainer/nextButton" to="." method="_on_next_button_pressed"]
+[node name="nextButton" type="Button" parent="AspectRatioContainer/questionSplitContainer/VSplitContainer/nextContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "submit"
+
+[node name="exitbutton" type="Button" parent="AspectRatioContainer/questionSplitContainer/VSplitContainer/nextContainer/VBoxContainer"]
+unique_name_in_owner = true
+visible = false
+layout_mode = 2
+text = "exit"
+
+[connection signal="pressed" from="AspectRatioContainer/questionSplitContainer/VSplitContainer/nextContainer/VBoxContainer/nextButton" to="." method="_on_next_button_pressed"]
+[connection signal="pressed" from="AspectRatioContainer/questionSplitContainer/VSplitContainer/nextContainer/VBoxContainer/exitbutton" to="." method="_on_exitbutton_pressed"]

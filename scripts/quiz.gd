@@ -1,3 +1,4 @@
+class_name quiz
 extends Control
 
 
@@ -15,11 +16,20 @@ var ques:question## active question
 
 var boxes :Array[CheckBox] ## the check boxes
 var state:=-1## the curent button checked
+var files:Array[question]
+
+signal correct
+
 func _ready() -> void:
-	
-	var files:Array[question]
+	print("set")
+	Global.quizNode=self
+	Global.connectRewards()
+	print(Global.quizNode)
 	for file in DirAccess.open(questionfolder).get_files():
 		files.append(load(questionfolder+file))
+		
+
+func get_question():
 	ques=files[randi_range(0,len(files)-1)]
 	%questionLabel.text=ques.questionText
 	
@@ -27,7 +37,9 @@ func _ready() -> void:
 	var avalibleIndexes:Array[int]
 	for i in len(ques.answers):
 		avalibleIndexes.append(i)
-	
+	for i in %questionVContainer.get_children():
+		i.queue_free()
+	boxes=[]
 	for i in len(ques.answers):
 		var ind := randi_range(0,len(avalibleIndexes)-1)
 		var check :=CheckBox.new()
@@ -37,6 +49,7 @@ func _ready() -> void:
 		check.text=ques.answers[avalibleIndexes[ind]]
 		avalibleIndexes.pop_at(ind)
 		%questionVContainer.add_child(check)
+
 
 func _process(delta):
 	question_background_visuals(delta)
@@ -57,9 +70,19 @@ func _on_check_box_pressed() -> void:
 
 
 func _on_next_button_pressed() -> void:
-	if state!=-1:
-		if ques.answers[0]==boxes[state].text:
-			print("correct")
+	if %nextButton.text=="submit":
+		if state!=-1:
+			if ques.answers[0]==boxes[state].text:
+				Global.correct+=1
+				correct.emit()
+				%nextButton.text="next"
+				%exitbutton.visible=true
+	elif %nextButton.text=="next":
+		get_question()
+		%nextButton.text="submit"
+		%exitbutton.visible=false
+
+
 
 func question_background_visuals(delta: float) -> void:
 	frame += delta
@@ -74,3 +97,7 @@ func question_background_visuals(delta: float) -> void:
 	qStyle.skew.x = lerp(0.10, 0.15, gumbus)
 	
 	add_theme_stylebox_override("the", qStyle)
+
+
+func _on_exitbutton_pressed() -> void:
+	Global.pause=false
