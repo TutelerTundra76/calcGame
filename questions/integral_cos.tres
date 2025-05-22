@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://cw5cui3qd52a5"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_eokbw"]
+
+[resource]
+script = ExtResource("1_eokbw")
+type = null
+questionText = "What is the integral of cos(x)?"
+answers = Array[String](["sin(x) + C", "-sin(x) + C", "cos(x) + C", "-cos(x) + C"])

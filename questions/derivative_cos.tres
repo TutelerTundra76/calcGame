@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://ccv5if04mycs6"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_1pur0"]
+
+[resource]
+script = ExtResource("1_1pur0")
+type = null
+questionText = "What is the derivative of cos(x)?"
+answers = Array[String](["-sin(x)", "sin(x)", "cos(x)", "-cos(x)"])

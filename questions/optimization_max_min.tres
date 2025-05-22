@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://du1idjk0ee2pi"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_0ycj4"]
+
+[resource]
+script = ExtResource("1_0ycj4")
+type = null
+questionText = "What do optimization problems find?"
+answers = Array[String](["Maximum or minimum values", "Derivative values", "Function concavity", "Continuity"])

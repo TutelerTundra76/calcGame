@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://sgx4dogeploi"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_7l7kl"]
+
+[resource]
+script = ExtResource("1_7l7kl")
+type = null
+questionText = "What are the conditions for the Mean Value Theorem?"
+answers = Array[String](["Continuous and differentiable", "Only differentiable", "Only continuous", "Bounded and differentiable"])

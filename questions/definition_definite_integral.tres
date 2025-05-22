@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://babcpb5a8tlr"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_orohr"]
+
+[resource]
+script = ExtResource("1_orohr")
+type = null
+questionText = "What does a definite integral represent?"
+answers = Array[String](["The net area under a curve", "Total distance traveled", "Slope of a function", "The instantaneous rate of change"])

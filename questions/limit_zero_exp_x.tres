@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://bj7qipd85m5om"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_31mtl"]
+
+[resource]
+script = ExtResource("1_31mtl")
+type = null
+questionText = "What is lim(x->0) (e^x-1)/x?"
+answers = Array[String](["1", "0", "∞", "x"])

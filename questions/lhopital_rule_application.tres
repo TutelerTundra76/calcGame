@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://pvkc56py2tu6"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_v0o0h"]
+
+[resource]
+script = ExtResource("1_v0o0h")
+type = null
+questionText = "What does L'Hôpital's Rule apply to?"
+answers = Array[String](["Indeterminate forms", "Any limit", "Continuity", "Critical points"])

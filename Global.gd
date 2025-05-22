@@ -17,9 +17,8 @@ func _input(event: InputEvent) -> void:
 			pause=false
 		else:
 			pause=true
-		print(quizNode)
-		quizNode.visible=true
-		quizNode.get_question()
 func setPause(paused:bool):
 	
 	get_tree().paused=paused
+	quizNode.visible=paused
+	quizNode.get_question()

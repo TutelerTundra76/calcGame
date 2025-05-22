@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://db4kpnu114f74"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_akjcv"]
+
+[resource]
+script = ExtResource("1_akjcv")
+type = null
+questionText = "What is the formula for integration by parts?"
+answers = Array[String](["∫udv = uv - ∫vdu", "∫udv = uv + ∫vdu", "∫udv = uv - ∫udu", "∫udv = uv + ∫vdv"])

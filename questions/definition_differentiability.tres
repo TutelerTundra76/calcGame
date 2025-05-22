@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://ius30rabbnc3"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_tfwuw"]
+
+[resource]
+script = ExtResource("1_tfwuw")
+type = null
+questionText = "Which is the definition of differentiability?"
+answers = Array[String](["A function is differentiable if its derivative exists at all points", "A function is differentiable if it is continuous", "A function is differentiable if its second derivative exists", "A function is differentiable if it has no critical points"])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://cr7a0od5y8ko3"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_cod7m"]
+
+[resource]
+script = ExtResource("1_cod7m")
+type = null
+questionText = "What is the Taylor series expansion for e^x centered at x=0?"
+answers = Array[String](["∑(x^n/n!)", "∑(x^n/(n+1)!)", "∑(x^n/n)", "∑(x^n/(n-1)!)"])

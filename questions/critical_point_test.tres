@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://dc1e2yxbjgych"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_snj63"]
+
+[resource]
+script = ExtResource("1_snj63")
+type = null
+questionText = "Which test determines local maximums and minimums?"
+answers = Array[String](["Second Derivative Test", "Limit Test", "L'Hôpital's Rule", "Extreme Value Theorem"])

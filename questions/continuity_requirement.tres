@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://d0ep84s7mn6q2"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_w6tpc"]
+
+[resource]
+script = ExtResource("1_w6tpc")
+type = null
+questionText = "What must be true for a function to be continuous?"
+answers = Array[String](["No jumps, breaks, or holes", "Derivative must exist", "It must be differentiable", "It must be strictly increasing"])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://dueheu5xpblds"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_bik6n"]
+
+[resource]
+script = ExtResource("1_bik6n")
+type = null
+questionText = "What is the derivative of ln(x)?"
+answers = Array[String](["1/x", "x", "ln(x)", "x^2"])

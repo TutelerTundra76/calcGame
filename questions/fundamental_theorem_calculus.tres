@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://c14hsmsasssth"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_pqk8r"]
+
+[resource]
+script = ExtResource("1_pqk8r")
+type = null
+questionText = "What does the Fundamental Theorem of Calculus state?"
+answers = Array[String](["Differentiation and integration are inverse operations", "Differentiation is the process of finding limits", "Integration is the process of summing infinite series", "A function is continuous if its derivative exists"])

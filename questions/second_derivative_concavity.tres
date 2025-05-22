@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://donqxfqrxsy3y"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_k8d4b"]
+
+[resource]
+script = ExtResource("1_k8d4b")
+type = null
+questionText = "What does the second derivative tell us about a function?"
+answers = Array[String](["Concavity", "Critical points", "Limits", "Continuity"])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://bwu2vooyeohiw"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_v4krd"]
+
+[resource]
+script = ExtResource("1_v4krd")
+type = null
+questionText = "What must be true to apply the Extreme Value Theorem?"
+answers = Array[String](["The function must be continuous on a closed interval", "The function must be differentiable", "The function must have no critical points", "The function must be increasing"])

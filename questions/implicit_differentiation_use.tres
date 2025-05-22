@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://ccx6pigoi48rt"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_v0xmu"]
+
+[resource]
+script = ExtResource("1_v0xmu")
+type = null
+questionText = "What does implicit differentiation help find?"
+answers = Array[String](["Derivatives of implicitly defined functions", "Limits", "Continuity", "Derivatives of linear functions"])

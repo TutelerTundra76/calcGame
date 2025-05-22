@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://d1571j6uq2h2n"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_gaqgt"]
+
+[resource]
+script = ExtResource("1_gaqgt")
+type = null
+questionText = "What kind of problem involves rates changing over time?"
+answers = Array[String](["Related rates", "Optimization", "Limits", "Critical points"])

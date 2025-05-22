@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://c4yml5iaiddn6"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_jus82"]
+
+[resource]
+script = ExtResource("1_jus82")
+type = null
+questionText = "What is the integral of x?"
+answers = Array[String](["(1/2)x^2 + C", "x^2 + C", "2x + C", "ln(x) + C"])

@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://cl4ru68qfphl"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_hxobs"]
+
+[resource]
+script = ExtResource("1_hxobs")
+type = null
+questionText = "What is lim(x->0) (sin(x)/x)?"
+answers = Array[String](["1", "0", "∞", "x"])

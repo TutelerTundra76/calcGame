@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://cjaumpydx5cg4"]
+
+[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_86t1d"]
+
+[resource]
+script = ExtResource("1_86t1d")
+type = null
+questionText = "What is the derivative of e^x?"
+answers = Array[String](["e^x", "x*e^x", "ln(x)", "x^e"])
