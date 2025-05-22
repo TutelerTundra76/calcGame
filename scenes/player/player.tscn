@@ -1,8 +1,10 @@
-[gd_scene load_steps=39 format=3 uid="uid://jvktnlahd8lb"]
+[gd_scene load_steps=42 format=3 uid="uid://jvktnlahd8lb"]
 
 [ext_resource type="Script" uid="uid://dsmepqnbh0k0b" path="res://scenes/player/player.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://cq4ufb1qdm5b5" path="res://assets/brackeys_platformer_assets/brackeys_platformer_assets/sprites/knight.png" id="2_dovo2"]
 [ext_resource type="Texture2D" uid="uid://ccq0du8fvokl4" path="res://assets/bow/Bow and Arrows.png" id="3_gmlin"]
+[ext_resource type="StyleBox" uid="uid://fc1x48025c8y" path="res://tres/health.tres" id="4_p47bc"]
+[ext_resource type="Script" uid="uid://b7u8pht1taia3" path="res://scenes/player/progress_bar.gd" id="5_75vfm"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_hqtel"]
 radius = 32.7567
@@ -322,15 +324,35 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="player" type="RigidBody2D" node_paths=PackedStringArray("arm", "hand", "sprite")]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0owmy"]
+bg_color = Color(0, 0, 0, 0.392157)
+skew = Vector2(0.175, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0, 0, 0, 0.392157)
+corner_radius_top_left = 2
+corner_radius_top_right = 2
+corner_radius_bottom_right = 2
+corner_radius_bottom_left = 2
+expand_margin_left = 3.0
+expand_margin_top = 3.0
+expand_margin_right = 3.0
+expand_margin_bottom = 3.0
+
+[node name="player" type="RigidBody2D" node_paths=PackedStringArray("sprite", "ammoDisplay", "arm", "hand", "healthBar")]
 collision_layer = 2
 gravity_scale = 0.0
+lock_rotation = true
 linear_damp_mode = 1
 script = ExtResource("1_onrkg")
 deceleration = 0.05
+sprite = NodePath("playerSprite")
+ammoDisplay = NodePath("Ammo")
 arm = NodePath("armPivot")
 hand = NodePath("armPivot/hand")
-sprite = NodePath("playerSprite")
+healthBar = NodePath("ProgressBar")
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hqtel")
@@ -359,6 +381,7 @@ sprite_frames = SubResource("SpriteFrames_dovo2")
 animation = &"shoot"
 
 [node name="arrow" type="AnimatedSprite2D" parent="armPivot/hand"]
+visible = false
 position = Vector2(6.25, 0)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_tffgl")
@@ -368,3 +391,23 @@ wait_time = 0.5
 one_shot = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Ammo" type="Label" parent="."]
+unique_name_in_owner = true
+offset_left = -552.0
+offset_top = 240.0
+offset_right = -492.0
+offset_bottom = 263.0
+text = "Arrows:"
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+unique_name_in_owner = true
+offset_left = -549.0
+offset_top = 279.0
+offset_right = -205.0
+offset_bottom = 299.0
+theme_override_styles/background = SubResource("StyleBoxFlat_0owmy")
+theme_override_styles/fill = ExtResource("4_p47bc")
+value = 15.0
+show_percentage = false
+script = ExtResource("5_75vfm")

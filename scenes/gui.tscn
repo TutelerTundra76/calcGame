@@ -6,3 +6,4 @@
 follow_viewport_enabled = true
 
 [node name="QuestionUI" parent="." instance=ExtResource("1_efmwq")]
+visible = false
