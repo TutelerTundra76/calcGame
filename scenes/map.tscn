@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=4 uid="uid://biu1c8si34wuq"]
 
-[ext_resource type="Script" uid="uid://vuirfqo5m8p6" path="res://map.gd" id="1_p5pve"]
+[ext_resource type="Script" uid="uid://vuirfqo5m8p6" path="res://scripts/map.gd" id="1_p5pve"]
 [ext_resource type="TileSet" uid="uid://cqubia6ocykqo" path="res://tres/map.tres" id="2_gldc4"]
 [ext_resource type="PackedScene" uid="uid://jvktnlahd8lb" path="res://scenes/player/player.tscn" id="2_wijl4"]
 
