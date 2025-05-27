@@ -353,6 +353,7 @@ ammoDisplay = NodePath("Ammo")
 arm = NodePath("armPivot")
 hand = NodePath("armPivot/hand")
 healthBar = NodePath("ProgressBar")
+maxHealth = 50
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_hqtel")
@@ -401,13 +402,12 @@ offset_bottom = 263.0
 text = "Arrows:"
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
-unique_name_in_owner = true
 offset_left = -549.0
 offset_top = 279.0
 offset_right = -205.0
 offset_bottom = 299.0
 theme_override_styles/background = SubResource("StyleBoxFlat_0owmy")
 theme_override_styles/fill = ExtResource("4_p47bc")
-value = 15.0
+value = 100.0
 show_percentage = false
 script = ExtResource("5_75vfm")

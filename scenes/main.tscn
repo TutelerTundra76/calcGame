@@ -9,7 +9,16 @@
 [node name="map" parent="." instance=ExtResource("1_0wfyh")]
 
 [node name="Node2D" parent="." instance=ExtResource("3_sugp2")]
-position = Vector2(193, -19)
+position = Vector2(318, -8)
+
+[node name="Node2D2" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(62, 316)
+
+[node name="Node2D3" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(388, 327)
+
+[node name="Node2D4" parent="." instance=ExtResource("3_sugp2")]
+position = Vector2(-130, -722)
 
 [node name="GUI" parent="." instance=ExtResource("2_0wfyh")]
 follow_viewport_enabled = false

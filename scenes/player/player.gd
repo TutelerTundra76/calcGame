@@ -22,20 +22,20 @@ var canShoot := true ## stops you from shooting a zillion arrows at once
 @export_category('health')
 @export var healthBar:ProgressBar
 @export var maxHealth:=10
-var health:=10
+var health:=0
 
 
 func _ready() -> void:
+	health=maxHealth
 	Global.player=self
 	Global.connectRewards()
-	hit(0)#set health bar
+	healthBar.setHealthColor()
 func add_ammo():
 	arrows+=5
 	print(arrows)
 func _physics_process(delta: float) -> void:
 	var dir:=Input.get_vector("left","right","forward","back").normalized()
 	checkAnimations(dir)
-	%ProgressBar.value=100*(health/maxHealth)
 	linear_velocity=lerp(linear_velocity,dir*maxSpeed,acceleration)
 	
 	arm.look_at(get_global_mouse_position())
@@ -71,6 +71,6 @@ func checkAnimations(dir:Vector2):
 	elif linear_velocity.length()<=20 and sprite.animation!="idle":
 		sprite.play("idle")
 func hit(damage:int):
-	health-damage
-	healthBar.value=100*(health/maxHealth)
+	health-=damage
+	healthBar.value=100*(float(health)/float(maxHealth))
 	healthBar.setHealthColor()

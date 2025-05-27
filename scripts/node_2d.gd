@@ -4,7 +4,7 @@ extends RigidBody2D
 @export var dec:=.1
 @export var maxSpeed:=100.0
 @export var sprite:AnimatedSprite2D
-
+@export var damageArea:Area2D
 var direction=0
 func _physics_process(delta: float) -> void:
 	var dir:Vector2= (%NavigationAgent2D.target_position-global_position)
@@ -16,6 +16,8 @@ func _physics_process(delta: float) -> void:
 		linear_velocity=lerp(linear_velocity,dir*maxSpeed,acc)
 		
 	checkAnimations(dir)
+
+
 func _on_timer_timeout() -> void:
 	if Global.player:
 		%NavigationAgent2D.target_position=Global.player.global_position
@@ -33,3 +35,17 @@ func checkAnimations(dir):
 		sprite.play("run")
 	elif linear_velocity.length()<=20 and sprite.animation!="idle":
 		sprite.play("idle")
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	for i in damageArea.get_overlapping_bodies():
+		if i is Player:
+			%damage_timer.start(1)
+			while !%damage_timer.paused:
+				i.hit(2)
+				await %damage_timer.timeout
+				
+
+
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	%damage_timer.paused=true
