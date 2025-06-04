@@ -7,7 +7,8 @@ extends RigidBody2D
 @export var damageArea:Area2D
 var direction=0
 func _physics_process(delta: float) -> void:
-	var dir:Vector2= (%NavigationAgent2D.target_position-global_position)
+	var dir:Vector2= (%NavigationAgent2D.point)
+	
 	dir=dir.normalized()
 	
 	if dir.length()==0:

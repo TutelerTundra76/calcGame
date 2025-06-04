@@ -2,6 +2,7 @@ extends Node
 
 var points:=0
 var correct:=0
+
 var pause:=false : set= setPause
 var quizNode:quiz
 var player:Player

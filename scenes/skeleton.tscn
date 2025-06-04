@@ -117,6 +117,7 @@ animation = &"run"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 unique_name_in_owner = true
+navigation_layers = 2
 avoidance_enabled = true
 
 [node name="Timer" type="Timer" parent="NavigationAgent2D"]

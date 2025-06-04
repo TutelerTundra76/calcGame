@@ -19,6 +19,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node) -> void:
 	print("hit")
+	Global.points+=200
 	await get_tree().create_timer(.1).timeout
 	if body is enemy:
 		body.queue_free()

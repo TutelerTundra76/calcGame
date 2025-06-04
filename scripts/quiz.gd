@@ -11,6 +11,7 @@ var visualConstant = 1 ## I dont know why this exists but I need it
 var ques:question## active question
 # the folder where the questions are 
 @export var questionfolder:="res://questions/" ## the path to the questions
+@export var anim:AnimationPlayer
 @onready var style = preload("res://tres/theme.tres")  ## the style to apply to everything
 @onready var qStyle = preload("res://tres/questionBackground.tres") ## stylebox specifically for the background
 
@@ -73,10 +74,13 @@ func _on_next_button_pressed() -> void:
 	if %nextButton.text=="submit":
 		if state!=-1:
 			if ques.answers[0]==boxes[state].text:
+				anim.play("correct")
 				Global.correct+=1
 				correct.emit()
 				%nextButton.text="next"
 				%exitbutton.visible=true
+			else:
+				anim.play("wrong")
 	elif %nextButton.text=="next":
 		get_question()
 		%nextButton.text="submit"

@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://b8d6ohf20ya0d"]
-
-[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_1hmp8"]
-
-[resource]
-script = ExtResource("1_1hmp8")
-type = null
-questionText = "What does the Integral Net Change Theorem describe?"
-answers = Array[String](["Accumulated change over an interval", "Instantaneous rate of change", "Derivative definition", "Continuity condition"])
