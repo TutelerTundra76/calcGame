@@ -1,13 +1,8 @@
-[gd_scene load_steps=5 format=4 uid="uid://biu1c8si34wuq"]
+[gd_scene load_steps=4 format=4 uid="uid://biu1c8si34wuq"]
 
 [ext_resource type="Script" uid="uid://vuirfqo5m8p6" path="res://scripts/map.gd" id="1_p5pve"]
 [ext_resource type="TileSet" uid="uid://cqubia6ocykqo" path="res://tres/map.tres" id="2_gldc4"]
 [ext_resource type="PackedScene" uid="uid://jvktnlahd8lb" path="res://scenes/player/player.tscn" id="2_wijl4"]
-
-[sub_resource type="NavigationPolygon" id="NavigationPolygon_gldc4"]
-vertices = PackedVector2Array(2940, 627, -3551.38, 591.18, -3681, -2806, 2949, -2924, 4908.89, -4873.01, 3688.58, 2013.17, 3388, 997, 3360, -3355, -4798.13, -4106.66, -3974, -3025, -5624.56, 2212.75, -3900, 946, -3596, 975, -3595.7, 964.438)
-polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3), PackedInt32Array(4, 5, 6, 7), PackedInt32Array(8, 4, 7, 9), PackedInt32Array(10, 8, 9, 11), PackedInt32Array(5, 10, 11, 12), PackedInt32Array(11, 13, 12), PackedInt32Array(5, 12, 6)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(3697, 2023, -5636, 2223, -4807, -4116, 4921, -4884)])
 
 [node name="map" type="Node2D"]
 script = ExtResource("1_p5pve")
@@ -19,20 +14,12 @@ tile_map_data = PackedByteArray("AAAVAJIAAAAEAAcAAAARAJEAAAAEAAcAAAANAJAAAAAEAAc
 tile_set = ExtResource("2_gldc4")
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="."]
+visible = false
 position = Vector2(61, -28)
 scale = Vector2(10, 10)
-tile_map_data = PackedByteArray("AAAFAAQAAAABAAoAAAAEAAQAAAABAAoAAAADAAQAAAABAAoAAAACAAQAAAABAAoAAAABAAQAAAABAAoAAAAAAAQAAAABAAoAAAD//wQAAAABAAoAAAD+/wQAAAABAAoAAAD9/wQAAAABAAoAAAD8/wQAAAABAAoAAAD7/wQAAAABAAoAAAD6/wQAAAABAAoAAAD5/wQAAAABAAoAAAAGAAQAAAABAAoAAAAHAAQAAAABAAoAAAAIAAQAAAABAAoAAAAJAAQAAAABAAoAAAAKAAQAAAABAAoAAAALAAQAAAABAAoAAAAMAAQAAAABAAoAAAANAAQAAAABAAoAAAAOAAQAAAABAAoAAAAPAAQAAAABAAoAAAAQAAQAAAABAAoAAADq/wQAAAABAAoAAADr/wQAAAABAAoAAADs/wQAAAABAAoAAADt/wQAAAABAAoAAADu/wQAAAABAAoAAADv/wQAAAABAAoAAADw/wQAAAABAAoAAADx/wQAAAABAAoAAADy/wQAAAABAAoAAADz/wQAAAABAAoAAAD0/wQAAAABAAoAAAD1/wQAAAABAAoAAAD2/wQAAAABAAoAAAD3/wQAAAABAAoAAAD4/wQAAAABAAoAAAARAAQAAAABAAoAAAA=")
+tile_map_data = PackedByteArray("AAAFAAQAAAABAAoAAAAEAAQAAAABAAoAAAADAAQAAAABAAoAAAACAAQAAAABAAoAAAABAAQAAAABAAoAAAAAAAQAAAABAAoAAAD//wQAAAABAAoAAAD+/wQAAAABAAoAAAD9/wQAAAABAAoAAAD8/wQAAAABAAoAAAAGAAQAAAABAAoAAAAHAAQAAAABAAoAAAAIAAQAAAABAAoAAAAJAAQAAAABAAoAAAAKAAQAAAABAAoAAAALAAQAAAABAAoAAAAMAAQAAAABAAoAAAANAAQAAAABAAoAAAAOAAQAAAABAAoAAAAPAAQAAAABAAoAAAAQAAQAAAABAAoAAAARAAQAAAABAAoAAAA=")
 tile_set = ExtResource("2_gldc4")
 
 [node name="player" parent="." instance=ExtResource("2_wijl4")]
 deceleration = 0.001
 acceleration = 0.05
-
-[node name="NavigationRegion2D" type="NavigationRegion2D" parent="."]
-navigation_polygon = SubResource("NavigationPolygon_gldc4")
-navigation_layers = 2
-
-[node name="NavigationObstacle2D" type="NavigationObstacle2D" parent="NavigationRegion2D"]
-vertices = PackedVector2Array(-3585, 591, 2940, 627, 2949, -2924, -3681, -2806, -3537, 968, -3900, 946, -3974, -3025, 3360, -3355, 3388, 997, -3596, 975)
-affect_navigation_mesh = true
-carve_navigation_mesh = true

@@ -117,12 +117,14 @@ animation = &"run"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
 unique_name_in_owner = true
-navigation_layers = 2
+navigation_layers = 3
+simplify_path = true
 avoidance_enabled = true
+debug_enabled = true
 
 [node name="Timer" type="Timer" parent="NavigationAgent2D"]
 process_callback = 0
-wait_time = 0.1
+wait_time = 0.4
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -136,6 +138,7 @@ shape = SubResource("CapsuleShape2D_ymvsc")
 [node name="damage_timer" type="Timer" parent="Area2D"]
 unique_name_in_owner = true
 
+[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="timeout" from="NavigationAgent2D/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
