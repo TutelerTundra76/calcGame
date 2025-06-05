@@ -33,7 +33,7 @@ func _ready() -> void:
 func add_ammo():
 	arrows+=5
 	print(arrows)
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	var dir:=Input.get_vector("left","right","forward","back").normalized()
 	checkAnimations(dir)
 	linear_velocity=lerp(linear_velocity,dir*maxSpeed,acceleration)
@@ -44,7 +44,7 @@ func _physics_process(delta: float) -> void:
 		linear_velocity=lerp(linear_velocity,Vector2.ZERO,deceleration)
 func _input(event: InputEvent) -> void:
 	ammoDisplay.text="Arrows: %s"%arrows
-	if event.is_action_pressed("shoot") and canShoot:
+	if event.is_action_pressed("shoot") and canShoot and arrows>0:
 		arrows-=1
 		shootAnim.stop()
 		shootAnim.play("shoot")
@@ -57,7 +57,7 @@ func _input(event: InputEvent) -> void:
 		bull.global_transform = hand.global_transform
 		canShoot = true
 		get_tree().root.add_child(bull)
-		bull.fire(self, hand)
+		bull.fire( hand)
 func checkAnimations(dir:Vector2):
 	if dir.x<0 and direction==1:
 		direction=-1

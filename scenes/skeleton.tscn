@@ -7,8 +7,8 @@
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_r6xse"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ymvsc"]
-radius = 33.0
-height = 110.0
+radius = 22.0
+height = 76.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwpf0"]
 atlas = ExtResource("2_sv33q")
@@ -93,7 +93,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="RigidBody2D" node_paths=PackedStringArray("sprite", "damageArea")]
+[node name="Node2D" type="RigidBody2D" node_paths=PackedStringArray("sprite", "damageArea", "nav")]
 collision_layer = 4
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_r6xse")
@@ -104,12 +104,14 @@ max_contacts_reported = 1
 script = ExtResource("1_r6xse")
 sprite = NodePath("AnimatedSprite2D")
 damageArea = NodePath("Area2D")
+nav = NodePath("NavigationAgent2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_ymvsc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
 position = Vector2(0, -11)
 scale = Vector2(2.5, 2.5)
 sprite_frames = SubResource("SpriteFrames_4ixog")
@@ -124,7 +126,6 @@ debug_enabled = true
 
 [node name="Timer" type="Timer" parent="NavigationAgent2D"]
 process_callback = 0
-wait_time = 0.4
 autostart = true
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -138,7 +139,6 @@ shape = SubResource("CapsuleShape2D_ymvsc")
 [node name="damage_timer" type="Timer" parent="Area2D"]
 unique_name_in_owner = true
 
-[connection signal="velocity_computed" from="NavigationAgent2D" to="." method="_on_navigation_agent_2d_velocity_computed"]
 [connection signal="timeout" from="NavigationAgent2D/Timer" to="." method="_on_timer_timeout"]
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]
