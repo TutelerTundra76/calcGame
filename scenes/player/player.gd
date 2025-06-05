@@ -2,9 +2,9 @@ class_name Player
 extends RigidBody2D
 @export_category("movement")
 @export var speed:=100
-@export var deceleration:=.25
+@export var deceleration:=.65
 @export var acceleration:=1.0
-@export var maxSpeed:=500.0
+@export var maxSpeed:=190.0
 @export var sprite:AnimatedSprite2D
 var direction:=1
 

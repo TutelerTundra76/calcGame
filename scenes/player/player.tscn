@@ -346,6 +346,7 @@ expand_margin_bottom = 3.0
 
 [node name="player" type="RigidBody2D" node_paths=PackedStringArray("sprite", "ammoDisplay", "arm", "hand", "healthBar")]
 collision_layer = 2
+collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_p47bc")
 gravity_scale = 0.0
 lock_rotation = true
@@ -413,6 +414,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Ammo" type="Label" parent="holder"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_top = -31.0
 offset_right = 60.0
 offset_bottom = -8.0

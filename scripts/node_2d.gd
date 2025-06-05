@@ -1,8 +1,8 @@
 class_name enemy
 extends RigidBody2D
-@export var acc:=.85
-@export var dec:=.1
-@export var maxSpeed:=100.0
+@export var acc:=.95
+@export var dec:=.3
+@export var maxSpeed:=230.0
 @export var sprite:AnimatedSprite2D
 @export var damageArea:Area2D
 @export var nav:NavigationAgent2D
@@ -22,6 +22,8 @@ func _physics_process(delta: float) -> void:
 			nav.set_velocity_forced(linear_velocity)
 
 func _on_timer_timeout() -> void:
+	var dist = global_position.distance_to(Global.player.global_position)
+	$NavigationAgent2D/Timer.wait_time = min(1, dist / 1000)
 	if Global.player:
 		nav.target_position=Global.player.global_position
 		
