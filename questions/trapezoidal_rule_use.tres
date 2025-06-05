@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://b1xwo2b87ehea"]
-
-[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_eoveu"]
-
-[resource]
-script = ExtResource("1_eoveu")
-type = null
-questionText = "What does the Trapezoidal Rule approximate?"
-answers = Array[String](["Definite integrals", "Derivatives", "Critical points", "Limits"])

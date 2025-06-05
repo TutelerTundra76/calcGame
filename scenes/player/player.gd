@@ -32,7 +32,7 @@ func _ready() -> void:
 	healthBar.setHealthColor()
 func add_ammo():
 	arrows+=5
-	print(arrows)
+	ammoDisplay.text="Arrows: %s"%arrows
 func _physics_process(_delta: float) -> void:
 	var dir:=Input.get_vector("left","right","forward","back").normalized()
 	checkAnimations(dir)
