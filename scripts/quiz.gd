@@ -22,7 +22,8 @@ var files:Array[question]
 signal correct
 
 func _ready() -> void:
-	print("set")
+	
+	#print("set")
 	Global.quizNode=self
 	Global.connectRewards()
 	print(Global.quizNode)
@@ -57,6 +58,8 @@ func _process(delta):
 
 
 #make sure only one button is pressed
+
+
 func _on_check_box_pressed() -> void:
 	var found:bool
 	#check every box to see if is checked and if it is the last answer or the new one
@@ -68,24 +71,6 @@ func _on_check_box_pressed() -> void:
 				found=true
 			else:
 				boxes[i].button_pressed=false
-
-
-func _on_next_button_pressed() -> void:
-	if %nextButton.text=="submit":
-		if state!=-1:
-			if ques.answers[0]==boxes[state].text:
-				anim.play("correct")
-				Global.correct+=1
-				correct.emit()
-				%nextButton.text="next"
-				%exitbutton.visible=true
-			else:
-				anim.play("wrong")
-	elif %nextButton.text=="next":
-		get_question()
-		%nextButton.text="submit"
-		%exitbutton.visible=false
-
 
 
 func question_background_visuals(delta: float) -> void:
@@ -105,3 +90,21 @@ func question_background_visuals(delta: float) -> void:
 
 func _on_exitbutton_pressed() -> void:
 	Global.pause=false
+
+
+func _on_next_button_pressed() -> void:
+	print("clicked")
+	if %nextButton.text=="submit":
+		if state!=-1:
+			if ques.answers[0]==boxes[state].text:
+				anim.play("correct")
+				Global.correct+=1
+				correct.emit()
+				%nextButton.text="next"
+				%exitbutton.visible=true
+			else:
+				anim.play("wrong")
+	elif %nextButton.text=="next":
+		get_question()
+		%nextButton.text="submit"
+		%exitbutton.visible=false

@@ -413,6 +413,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Ammo" type="Label" parent="holder"]
 unique_name_in_owner = true
+layout_mode = 0
 offset_top = -31.0
 offset_right = 60.0
 offset_bottom = -8.0
