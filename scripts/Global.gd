@@ -6,6 +6,11 @@ var correct:=0
 var pause:=false : set= setPause
 var quizNode:quiz
 var player:Player
+var gameOver:GameOver
+
+
+
+
 func _ready():
 	process_mode = Node.PROCESS_MODE_ALWAYS
 
@@ -27,3 +32,6 @@ func setPause(paused:bool):
 	get_tree().paused=paused
 	quizNode.visible=paused
 	quizNode.get_question()
+
+func game_over() -> void: #passes it on to the node
+	gameOver.game_over()

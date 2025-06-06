@@ -1,6 +1,6 @@
 [gd_scene load_steps=17 format=3 uid="uid://bah1fvve7hpu4"]
 
-[ext_resource type="Script" uid="uid://psjcun4bx70o" path="res://scripts/node_2d.gd" id="1_r6xse"]
+[ext_resource type="Script" uid="uid://psjcun4bx70o" path="res://scripts/skeleton.gd" id="1_r6xse"]
 [ext_resource type="Texture2D" uid="uid://cahsjrvspgyrf" path="res://assets/skeleton/skeleton-idle.png" id="2_sv33q"]
 [ext_resource type="Texture2D" uid="uid://d1ybpu4nlxh2p" path="res://assets/skeleton/skeleton-walk.png" id="3_uaaco"]
 
@@ -93,7 +93,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Node2D" type="RigidBody2D" node_paths=PackedStringArray("sprite", "damageArea", "nav")]
+[node name="Skeleton" type="RigidBody2D" node_paths=PackedStringArray("sprite", "damageArea", "nav")]
 collision_layer = 4
 collision_mask = 5
 physics_material_override = SubResource("PhysicsMaterial_r6xse")

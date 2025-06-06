@@ -30,20 +30,26 @@ func _ready() -> void:
 	Global.player=self
 	Global.connectRewards()
 	healthBar.setHealthColor()
+
+
 func add_ammo():
 	arrows+=5
-	ammoDisplay.text="Arrows: %s"%arrows
+	ammoDisplay.text="Arrows: %s - press 'e' to get more"%arrows
+
+
 func _physics_process(_delta: float) -> void:
 	var dir:=Input.get_vector("left","right","forward","back").normalized()
 	checkAnimations(dir)
 	linear_velocity=lerp(linear_velocity,dir*maxSpeed,acceleration)
 	
 	arm.look_at(get_global_mouse_position())
-
+	
 	if dir==Vector2.ZERO:
 		linear_velocity=lerp(linear_velocity,Vector2.ZERO,deceleration)
+
+
 func _input(event: InputEvent) -> void:
-	ammoDisplay.text="Arrows: %s"%arrows
+	ammoDisplay.text="Arrows: %s - press 'e' to get more"%arrows
 	if event.is_action_pressed("shoot") and canShoot and arrows>0:
 		arrows-=1
 		shootAnim.stop()
@@ -58,6 +64,8 @@ func _input(event: InputEvent) -> void:
 		canShoot = true
 		get_tree().root.add_child(bull)
 		bull.fire( hand)
+
+
 func checkAnimations(dir:Vector2):
 	if dir.x<0 and direction==1:
 		direction=-1
@@ -70,7 +78,20 @@ func checkAnimations(dir:Vector2):
 		sprite.play("run")
 	elif linear_velocity.length()<=20 and sprite.animation!="idle":
 		sprite.play("idle")
+
+
 func hit(damage:int):
 	health-=damage
 	healthBar.value=100*(float(health)/float(maxHealth))
 	healthBar.setHealthColor()
+	
+	#process death
+	if health <= 0:
+		Global.gameOver.game_over()
+
+
+func dead() -> void:
+	hide()
+	canShoot = false
+	$hitbox.set_deferred("disabled", true) # you stop colliding
+	maxSpeed = 0 # makes it so you cant move when you die

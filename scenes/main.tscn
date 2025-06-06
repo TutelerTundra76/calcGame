@@ -1,15 +1,13 @@
 [gd_scene load_steps=4 format=3 uid="uid://bfnwepeoxhtav"]
 
 [ext_resource type="PackedScene" uid="uid://biu1c8si34wuq" path="res://scenes/map.tscn" id="1_0wfyh"]
+[ext_resource type="Script" uid="uid://t22iexk75swt" path="res://scripts/main.gd" id="1_jyhfs"]
 [ext_resource type="PackedScene" uid="uid://cjloc4t86fxuo" path="res://scenes/gui.tscn" id="2_0wfyh"]
-[ext_resource type="PackedScene" uid="uid://bah1fvve7hpu4" path="res://scenes/skeleton.tscn" id="3_sugp2"]
 
 [node name="Main" type="Node"]
+script = ExtResource("1_jyhfs")
 
 [node name="map" parent="." instance=ExtResource("1_0wfyh")]
-
-[node name="Node2D" parent="." instance=ExtResource("3_sugp2")]
-position = Vector2(318, -8)
 
 [node name="GUI" parent="." instance=ExtResource("2_0wfyh")]
 follow_viewport_enabled = false
