@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="question" load_steps=2 format=3 uid="uid://dk24c1l0tsb0e"]
-
-[ext_resource type="Script" uid="uid://u6khguqlv8a7" path="res://resources/questionResource.gd" id="1_73vyh"]
-
-[resource]
-script = ExtResource("1_73vyh")
-type = null
-questionText = "What does the difference quotient approximate?"
-answers = Array[String](["The derivative", "The integral", "A critical point", "Continuity"])

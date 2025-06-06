@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=15 format=3 uid="uid://cqubia6ocykqo"]
+[gd_resource type="TileSet" load_steps=16 format=3 uid="uid://cqubia6ocykqo"]
 
 [ext_resource type="Texture2D" uid="uid://b751fryqkxihr" path="res://assets/map/TilesetGraveyard.png" id="1_pew5p"]
 
@@ -33,6 +33,12 @@ agent_radius = 0.0
 
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_rm2ad"]
 
+[sub_resource type="NavigationPolygon" id="NavigationPolygon_l8700"]
+vertices = PackedVector2Array(-3.54688, 8, -8, 8, -8, -8, -3.44531, -8)
+polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-8, -8, -3.44301, -8, -3.54579, 8, -8, 8)])
+agent_radius = 0.0
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_e0an3"]
 texture = ExtResource("1_pew5p")
 0:0/0 = 0
@@ -66,12 +72,12 @@ texture = ExtResource("1_pew5p")
 6:1/0/terrain_set = 0
 6:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 2.31247, -3.23746, 8, -8, 7.65684)
 8:1/0 = 0
-8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.976376, -8, 8, -8, 8, 8, -0.668047, 8)
+8:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.05553, -8, 8, -8, 8, 8, 2.05553, 8)
 8:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_2p4u2")
 9:1/0 = 0
 9:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 10:1/0 = 0
-10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.565269, -8, -0.462494, 8, -8, 7.65684)
+10:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4.21383, -8, -4.21383, 8, -8, 8)
 11:1/0 = 0
 11:1/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_54auo")
 0:2/0 = 0
@@ -93,12 +99,12 @@ texture = ExtResource("1_pew5p")
 6:2/0/terrain_set = 0
 6:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4.98466, -2.6208, -8, -8, -8)
 8:2/0 = 0
-8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.976376, -8, 8, -8, 8, 8, -0.668047, 8)
+8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.05553, -8, 8, -8, 8, 8, 2.05553, 8)
 9:2/0 = 0
 9:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 9:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_2p4u2")
 10:2/0 = 0
-10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.565269, -8, -0.462494, 8, -8, 7.65684)
+10:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4.21383, -8, -4.21383, 8, -8, 8)
 11:2/0 = 0
 11:2/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_54auo")
 0:3/0 = 0
@@ -114,11 +120,11 @@ texture = ExtResource("1_pew5p")
 3:3/0/terrain_set = 0
 3:3/0/terrain = 4
 8:3/0 = 0
-8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-0.976376, -8, 8, -8, 8, -1.49026, -0.668047, -1.49026)
+8:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(2.05553, -8, 8, -8, 8, -1.64442, 1.7472, -1.64442)
 9:3/0 = 0
 9:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, -2.10692, -8, -2.00414)
 10:3/0 = 0
-10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -0.565269, -8, -0.8736, -2.10692, -8, -2.00414)
+10:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, -4.21383, -8, -4.00828, -2.46663, -8, -2.36386)
 10:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_2p4u2")
 11:3/0 = 0
 11:3/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_54auo")
@@ -253,7 +259,7 @@ texture = ExtResource("1_pew5p")
 9:6/0/terrain_set = 0
 9:6/0/terrains_peering_bit/bottom_right_corner = 1
 9:6/0/terrains_peering_bit/top_right_corner = 1
-9:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_4w0y0")
+9:6/0/navigation_layer_0/polygon = SubResource("NavigationPolygon_l8700")
 10:6/0 = 0
 10:6/0/terrain_set = 0
 10:6/0/terrains_peering_bit/bottom_right_corner = 1

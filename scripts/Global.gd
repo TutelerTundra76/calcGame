@@ -20,6 +20,8 @@ func _input(event: InputEvent) -> void:
 			pause=true
 
 
+	if event.is_action_pressed("quit"):
+		get_tree().quit()
 func setPause(paused:bool):
 	
 	get_tree().paused=paused
