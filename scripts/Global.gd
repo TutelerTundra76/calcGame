@@ -18,6 +18,8 @@ func _input(event: InputEvent) -> void:
 			pause=false
 		else:
 			pause=true
+
+
 func setPause(paused:bool):
 	
 	get_tree().paused=paused

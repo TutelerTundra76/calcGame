@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 
 func _on_timer_timeout() -> void:
 	var dist = global_position.distance_to(Global.player.global_position)
-	$NavigationAgent2D/Timer.wait_time = min(1, dist / 1000)
+	$NavigationAgent2D/Timer.wait_time = min(1, dist / 1000) # sets it so that the pathfinding updates more frequently when close by 
 	if Global.player:
 		nav.target_position=Global.player.global_position
 		
