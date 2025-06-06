@@ -8,6 +8,11 @@ extends RigidBody2D
 @export var nav:NavigationAgent2D
 var direction=0
 func _physics_process(delta: float) -> void:
+	if Global.player.global_position.x < global_position.x:
+		$AnimatedSprite2D.scale.x = -2.5
+	else:
+		$AnimatedSprite2D.scale.x = 2.5
+	
 	if nav:
 		if nav.get_path():
 			var dir:Vector2= to_local(nav.get_next_path_position()).normalized()
@@ -55,4 +60,5 @@ func _on_area_2d_body_entered(_body: Node2D) -> void:
 
 
 func _on_area_2d_body_exited(_body: Node2D) -> void:
-	%damage_timer.stop()
+	if %damage_timer:
+		%damage_timer.stop()

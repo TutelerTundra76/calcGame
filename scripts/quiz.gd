@@ -89,6 +89,8 @@ func question_background_visuals(delta: float) -> void:
 
 
 func _on_exitbutton_pressed() -> void:
+	%nextButton.text="submit"
+	%exitbutton.visible=false
 	Global.pause=false
 
 
