@@ -402,6 +402,7 @@ one_shot = true
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="holder" type="Control" parent="."]
+z_index = 10
 layout_mode = 3
 anchors_preset = 2
 anchor_top = 1.0
