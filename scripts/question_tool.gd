@@ -3,11 +3,13 @@ extends Node
 #for creating questions fast with AI
 #make sure the names do not contain slashes
 
-@export var run:= false :set = decypher ##this will run the tool
+@export var run:= false :set = g ##this will run the tool
 @export var seperator:String ##the seperator between values this is variable because complex seperators make it less likely for errors
 @export var data:String ##data should be formated as:\n "name1,question1,corectAnswer1,wrongAnswer1,wrongAnswer1,wrongAnswer1,name2,question2,corectAnswer2,wrongAnswer2,wrongAnswer2,wrongAnswer2,..."
+@export var quest:qh
+var files:Array[question]
 
-
+@export var questionfolder:="res://questions/"
 
 func decypher(_b):
 	data.replace("\n","")
@@ -23,3 +25,8 @@ func decypher(_b):
 			dataArray.remove_at(0)
 		#quesArray.append(ques)
 		ResourceSaver.save(ques,"res://questions/%s.tres" % Rname)
+
+func g(_b):
+	quest.questions=[]
+	for file in DirAccess.open(questionfolder).get_files():
+		quest.questions.append(load(questionfolder+file))

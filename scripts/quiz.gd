@@ -10,14 +10,13 @@ var visualConstant = 1 ## I dont know why this exists but I need it
 
 var ques:question## active question
 # the folder where the questions are 
-@export var questionfolder:="res://questions/" ## the path to the questions
+@export var files:qh ## the path to the questions
 @export var anim:AnimationPlayer
 @onready var style = preload("res://tres/theme.tres")  ## the style to apply to everything
 @onready var qStyle = preload("res://tres/questionBackground.tres") ## stylebox specifically for the background
 
 var boxes :Array[CheckBox] ## the check boxes
 var state:=-1## the curent button checked
-var files:Array[question]
 
 signal correct
 
@@ -27,12 +26,10 @@ func _ready() -> void:
 	Global.quizNode=self
 	Global.connectRewards()
 	print(Global.quizNode)
-	for file in DirAccess.open(questionfolder).get_files():
-		files.append(load(questionfolder+file))
 		
 
 func get_question():
-	ques=files[randi_range(0,len(files)-1)]
+	ques=files.questions[randi_range(0,len(files.questions)-1)]
 	%questionLabel.text=ques.questionText
 	
 	#scramble the answers

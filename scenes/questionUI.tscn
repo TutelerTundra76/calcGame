@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://s4r0dtmpiaoh"]
+[gd_scene load_steps=8 format=3 uid="uid://s4r0dtmpiaoh"]
 
 [ext_resource type="Script" uid="uid://bagpcmsw4w0h6" path="res://scripts/quiz.gd" id="1_ssvsy"]
+[ext_resource type="Resource" uid="uid://calkb7qo2c26e" path="res://scenes/questionUI.tres" id="2_hwkir"]
 [ext_resource type="Theme" uid="uid://de5gpox1bsv1r" path="res://tres/theme.tres" id="2_upyk2"]
 
 [sub_resource type="Animation" id="Animation_upyk2"]
@@ -112,6 +113,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ssvsy")
+files = ExtResource("2_hwkir")
 anim = NodePath("AnimationPlayer")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
